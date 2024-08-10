@@ -32,13 +32,16 @@ const HeaderLayout = () => {
     <>
       <Header
         style={{
-          background: "#fff",
+          background: "#fefae0",
         }}
         className={classes["header"]}
       >
         <div>Coffeeland</div>
         <div>
           <Menu
+            style={{
+              background: "#fefae0",
+            }}
             theme="light"
             defaultSelectedKeys={["1"]}
             mode="horizontal"

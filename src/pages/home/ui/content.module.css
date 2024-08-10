@@ -1,0 +1,27 @@
+/* home */
+.main_home {
+  position: relative;
+  height: 90vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+.main_home::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: url("../../../shared/assets/img/coffee-girl.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: calc(50% + 0px) calc(10% + 0px);
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+@media screen and (max-width: 768px) {
+  .main_home::before {
+    background-position: center;
+  }
+}

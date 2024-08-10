@@ -1,9 +1,16 @@
-import React from 'react'
+import UpCurves from "@/src/shared/ui/curves/UpCurves/UpCurves";
+import React from "react";
+import classes from "./content.module.css";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <main className={classes["main_home"]}>
+        <UpCurves />
+        <div>Home</div>
+      </main>
+    </>
+  );
+};
 
-export default Home
+export default Home;

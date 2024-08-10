@@ -1,0 +1,19 @@
+.custom_curve {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.custom_curve .svg_home {
+  position: relative;
+  display: block;
+  width: calc(105% + 1.3px);
+  height: 56px;
+  transform: rotateY(180deg);
+}
+
+.custom_curve .shape_fill {
+  fill: bisque;
+}
