@@ -1,6 +1,9 @@
 "use client";
 import { Layout, Menu, MenuProps, Switch } from "antd";
 import classes from "./Header.module.css";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 type MenuItem = Required<MenuProps>["items"][number];
 
 function getItem(
@@ -18,8 +21,8 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem("Menu", "1"),
-  getItem("Cart", "2"),
+  getItem(<Link href={"/menu"}>Menu</Link>, "/menu"),
+  getItem(<Link href={"/cart"}>Cart</Link>, "/cart"),
   getItem("Orders", "3"),
   getItem("Book", "4"),
   getItem("Tables", "5"),
@@ -27,6 +30,8 @@ const items: MenuItem[] = [
 ];
 
 const HeaderLayout = () => {
+  const pathname = usePathname();
+
   const { Header } = Layout;
   return (
     <>
@@ -36,14 +41,22 @@ const HeaderLayout = () => {
         }}
         className={classes["header"]}
       >
-        <div>Coffeeland</div>
+        <Link
+          href={"/"}
+          style={{
+            color: pathname === "/" ? "brown" : "black",
+          }}
+        >
+          Coffeeland
+        </Link>
+
         <div>
           <Menu
             style={{
               background: "#fefae0",
             }}
             theme="light"
-            defaultSelectedKeys={["1"]}
+            selectedKeys={[pathname as string]}
             mode="horizontal"
             items={items}
           />
