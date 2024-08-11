@@ -1,0 +1,8 @@
+.coffeecard {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 13px;
+  border-radius: 25px;
+  height: 250px;
+}

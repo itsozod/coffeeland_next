@@ -1,17 +1,11 @@
 import React from "react";
 import Search from "./Search/Search";
+import { Coffee } from "@/src/shared/types/types";
+import { getCoffees } from "@/src/entities/coffees/api";
+import classes from "./content.module.css";
+import CoffeeCard from "@/src/entities/coffees/CoffeeCard";
+import { Flex } from "antd";
 
-const getCoffees = async (params?: string) => {
-  try {
-    const response = await fetch(
-      `http://localhost:5000/coffees?q=${params}`
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-};
 const Menu = async ({ searchParams }: { searchParams: { name: string } }) => {
   const coffees = await getCoffees(
     searchParams?.name ? searchParams?.name : ""
@@ -19,16 +13,18 @@ const Menu = async ({ searchParams }: { searchParams: { name: string } }) => {
 
   return (
     <>
-      <Search />
-      <div>
-        {coffees?.map((coffee: any) => {
-          return (
-            <>
-              <div>{coffee?.title}</div>
-            </>
-          );
-        })}
-      </div>
+      <Flex vertical={true}>
+        <Search />
+        <div className={classes["coffeecard_container"]}>
+          {coffees?.map((coffee: Coffee) => {
+            return (
+              <>
+                <CoffeeCard coffee={coffee} />
+              </>
+            );
+          })}
+        </div>
+      </Flex>
     </>
   );
 };

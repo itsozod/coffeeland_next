@@ -1,7 +1,7 @@
 "use client";
 import useSearchParamsNext from "@/src/shared/hooks/useSearchParamsNext";
-import { Input } from "antd";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Flex, Input } from "antd";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 const Search = () => {
@@ -17,12 +17,26 @@ const Search = () => {
     replace(`${pathname}?${params.toString()}`);
   }
   return (
-    <Input
-      size="large"
-      placeholder="Search..."
-      onChange={(e) => handleSearch(e.target.value)}
-      defaultValue={searchParams?.get("name")?.toString()}
-    />
+    <>
+      <Flex
+        justify="center"
+        align="center"
+        style={{
+          marginTop: "10px",
+        }}
+      >
+        <Input
+          style={{
+            width: "100%",
+            maxWidth: "300px",
+          }}
+          size="large"
+          placeholder="Search..."
+          onChange={(e) => handleSearch(e.target.value)}
+          defaultValue={searchParams?.get("name")?.toString()}
+        />
+      </Flex>
+    </>
   );
 };
 
