@@ -4,17 +4,19 @@ import { Coffee } from "@/src/shared/types/types";
 import { getCoffees } from "@/src/entities/coffees/api";
 import classes from "./content.module.css";
 import CoffeeCard from "@/src/entities/coffees/CoffeeCard";
-import { Flex } from "antd";
+import Pagination from "./Pagination/Pagination";
+import { Params } from "@/src/entities/coffees/params.types";
 
-const Menu = async ({ searchParams }: { searchParams: { name: string } }) => {
-  const coffees = await getCoffees(
-    searchParams?.name ? searchParams?.name : ""
+const Menu = async ({ searchParams }: { searchParams: Params }) => {
+  const coffees: Coffee[] = await getCoffees(
+    searchParams?.name,
+    searchParams?.page
   );
 
   return (
     <>
-      <Flex vertical={true}>
-        <Search />
+      <Search />
+      <div className={classes["full_container"]}>
         <div className={classes["coffeecard_container"]}>
           {coffees?.map((coffee: Coffee) => {
             return (
@@ -24,7 +26,8 @@ const Menu = async ({ searchParams }: { searchParams: { name: string } }) => {
             );
           })}
         </div>
-      </Flex>
+        <Pagination />
+      </div>
     </>
   );
 };
