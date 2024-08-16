@@ -10,13 +10,13 @@ const CoffeeCard = ({ coffee }: { coffee: Coffee }) => {
       <div className={classes["coffeecard"]} key={coffee?.id}>
         <Image
           style={{
-            width: "100%",
+            maxWidth: "100%",
             height: "150px",
             borderRadius: "25px",
           }}
           src={coffee?.img}
           alt="Image"
-          width={100}
+          width={200}
           height={100}
         />
         <p>{coffee?.title}</p>

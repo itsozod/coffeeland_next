@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
-import { Pagination as AntPagination } from "antd";
+import { Pagination } from "antd";
 import useSearchParamsNext from "@/src/shared/hooks/useSearchParamsNext";
 import { usePathname, useRouter } from "next/navigation";
-const TOTAL_PAGES = 30;
+const TOTAL_PAGES = 3;
 
-function Pagination() {
+export default function PaginationLayout() {
   const { params, searchParams } = useSearchParamsNext();
   const { replace } = useRouter();
   const pathname = usePathname();
   return (
     <>
-      <AntPagination
+      <Pagination
         current={Number(searchParams?.get("page"))}
-        total={TOTAL_PAGES}
+        total={TOTAL_PAGES * 10}
         onChange={(page) => {
           params.set("page", page?.toString());
           replace(`${pathname}?${params?.toString()}`);
@@ -22,4 +22,3 @@ function Pagination() {
     </>
   );
 }
-export default Pagination;

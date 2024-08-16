@@ -4,7 +4,7 @@ import { Flex, Input } from "antd";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
-const Search = () => {
+export default function Search() {
   const { params, searchParams } = useSearchParamsNext();
   const { replace } = useRouter();
   const pathname = usePathname();
@@ -39,6 +39,4 @@ const Search = () => {
       </Flex>
     </>
   );
-};
-
-export default Search;
+}
