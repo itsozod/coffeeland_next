@@ -5,6 +5,7 @@ import HeaderLayout from "@/src/widgets/layout/header/Header";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Layout } from "antd";
 import ContentLayout from "@/src/widgets/layout/Content/ContentLayout";
+import Providers from "./providers/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,13 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AntdRegistry>
-          <Layout style={{ minHeight: "100vh" }}>
-            <HeaderLayout />
-
-            <ContentLayout>{children}</ContentLayout>
-          </Layout>
-        </AntdRegistry>
+        <Providers>
+          <AntdRegistry>
+            <Layout style={{ minHeight: "100vh" }}>
+              <HeaderLayout />
+              <ContentLayout>{children}</ContentLayout>
+            </Layout>
+          </AntdRegistry>
+        </Providers>
       </body>
     </html>
   );
