@@ -1,13 +1,12 @@
 "use client";
-import { Params } from "@/src/entities/coffees/params.types";
 import { Coffee } from "@/src/shared/types/types";
 import CoffeeCard from "@/src/entities/coffees/CoffeeCard";
 import classes from "./content.module.css";
 import { useGetCoffees } from "@/src/entities/coffees/useGetCoffees";
 import Loader from "@/src/shared/ui/loader/Loader";
 
-export default function Menu({ searchParams }: { searchParams: Params }) {
-  const { data: coffees, isLoading, error } = useGetCoffees(searchParams);
+export default function Menu() {
+  const { data: coffees, isLoading, error } = useGetCoffees();
   if (error) return <div>{error?.message}</div>;
   if (isLoading) return <Loader />;
 

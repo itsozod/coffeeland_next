@@ -17,13 +17,14 @@ export default function Search() {
 
   useEffect(() => {
     if (debounceValue?.length) {
-      params.set("name", searchValue);
+      params.set("q", searchValue);
       params.set("page", "1");
     } else {
-      params.delete("name");
+      params.delete("q");
     }
     replace(`${pathname}?${params.toString()}`);
   }, [debounceValue, searchValue, params, pathname, replace]);
+
   return (
     <>
       <Flex
