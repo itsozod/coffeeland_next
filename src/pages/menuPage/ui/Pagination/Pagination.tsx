@@ -12,10 +12,10 @@ export default function PaginationLayout() {
   return (
     <>
       <Pagination
-        current={Number(searchParams?.get("page"))}
+        current={Number(searchParams?.get("_page"))}
         total={TOTAL_PAGES * 10}
         onChange={(page) => {
-          params.set("page", page?.toString());
+          params.set("_page", page?.toString());
           replace(`${pathname}?${params?.toString()}`);
         }}
       />

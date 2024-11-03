@@ -6,6 +6,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Layout } from "antd";
 import ContentLayout from "@/src/widgets/layout/Content/ContentLayout";
 import Providers from "./providers/Providers";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+          <Toaster />
           <AntdRegistry>
             <Layout style={{ minHeight: "100vh" }}>
               <HeaderLayout />
