@@ -1,7 +1,7 @@
 /* home */
 .main_home {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   background-color: black;
   display: flex;
   justify-content: center;

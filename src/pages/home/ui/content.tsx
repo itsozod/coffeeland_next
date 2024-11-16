@@ -7,7 +7,6 @@ const Home = () => {
     <>
       <main className={classes["main_home"]}>
         <UpCurves />
-        <div>Home</div>
       </main>
     </>
   );

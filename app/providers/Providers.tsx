@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 import toast from "react-hot-toast";
 import { SWRConfig } from "swr";
 
-const fetcher = async (...args: [string]) => {
-  const res = await fetch(...args);
+const fetcher = async (url: string) => {
+  const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Status: ${res.status}`);
   }
@@ -23,7 +23,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
         },
         revalidateOnReconnect: false,
         revalidateOnFocus: false,
-        dedupingInterval: 1000000,
+        dedupingInterval: 60000, // Cache data for 60 seconds
         shouldRetryOnError: false,
         keepPreviousData: true,
       }}
