@@ -1,10 +1,10 @@
 import Image from "next/image";
 import classes from "./CoffeeCard.module.css";
-import { Coffee } from "@/src/shared/types/types";
 import { Button, Flex } from "antd";
-import { AddIcon } from "@/src/shared/assets/icons/addIcon";
+import { AddIcon } from "@/shared/assets/icons/addIcon";
+import * as I from "@models";
 
-const CoffeeCard = ({ coffee }: { coffee: Coffee }) => {
+const CoffeeCard = ({ coffee }: { coffee: I.Coffee }) => {
   return (
     <>
       <div className={classes["coffeecard"]} key={coffee?.id}>

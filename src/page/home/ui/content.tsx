@@ -1,4 +1,4 @@
-import UpCurves from "@/src/shared/ui/curves/UpCurves/UpCurves";
+import UpCurves from "@/shared/ui/curves/UpCurves/UpCurves";
 import React from "react";
 import classes from "./content.module.css";
 

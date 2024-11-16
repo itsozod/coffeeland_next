@@ -1,5 +1,5 @@
 "use client";
-import useSearchParamsNext from "@/src/shared/hooks/useSearchParamsNext";
+import { useSearchParamsNext } from "@/shared/hooks";
 import { useDebounce } from "@uidotdev/usehooks";
 import { Flex, Input } from "antd";
 import { usePathname, useRouter } from "next/navigation";

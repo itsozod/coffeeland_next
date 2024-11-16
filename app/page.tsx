@@ -1,3 +1,3 @@
-import Home from "@/src/pages/home/ui/content";
+import { Home } from "@/page/home";
 
 export default Home;

@@ -1,5 +1,5 @@
-import useSearchParamsNext from "@/src/shared/hooks/useSearchParamsNext";
-import { paramsGenerator } from "@/src/shared/utils/paramsGenerator";
+import { useSearchParamsNext } from "@/shared/hooks";
+import { paramsGenerator } from "@/shared/utils";
 import useSWR from "swr";
 
 export const useGetCoffees = () => {

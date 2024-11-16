@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Pagination } from "antd";
-import useSearchParamsNext from "@/src/shared/hooks/useSearchParamsNext";
+import { useSearchParamsNext } from "@/shared/hooks";
 import { usePathname, useRouter } from "next/navigation";
 const TOTAL_PAGES = 3;
 

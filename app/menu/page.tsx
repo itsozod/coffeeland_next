@@ -1,7 +1,6 @@
-import Menu from "@/src/pages/menuPage/content";
-import PaginationLayout from "@/src/pages/menuPage/ui/Pagination/Pagination";
-import Search from "@/src/pages/menuPage/ui/Search/Search";
-import React from "react";
+import { Menu } from "@/page/menuPage";
+import { PaginationLayout } from "@/page/menuPage/ui/Pagination";
+import { Search } from "@/page/menuPage/ui/Search";
 
 const MenuPage = () => {
   return (

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import HeaderLayout from "@/src/widgets/layout/header/Header";
+import HeaderLayout from "@/widgets/layout/header/Header";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Layout } from "antd";
-import ContentLayout from "@/src/widgets/layout/Content/ContentLayout";
+import ContentLayout from "@/widgets/layout/Content/ContentLayout";
 import Providers from "./providers/Providers";
 import { Toaster } from "react-hot-toast";
 
